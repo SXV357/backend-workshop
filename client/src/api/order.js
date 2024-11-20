@@ -5,14 +5,20 @@ const OrderClient = axios.create({
   timeout: 1000,
 })
 
-// TODO: Create CRUD (Create, Read/get, Update, Delete) operations for orders
+export const createOrder = ({productName, quantity}) => 
+  OrderClient.post('/', {
+    productName,
+    quantity,
+  })
 
-export const createOrder = () => OrderClient
+export const getOrder = ({id}) => OrderClient.get(`/${id}`)
 
-export const getOrder = () => OrderClient
+export const getOrders = () => OrderClient.get()
 
-export const getOrders = () => OrderClient
+export const updateOrder = ({id, productName, quantity}) => 
+  OrderClient.patch(`/${id}`, {
+    productName,
+    quantity,
+  })
 
-export const updateOrder = () => OrderClient
-
-export const deleteOrder = () => OrderClient
+export const deleteOrder = ({id}) => OrderClient.delete(`/${id}`)

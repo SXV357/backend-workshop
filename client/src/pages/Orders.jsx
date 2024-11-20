@@ -1,8 +1,5 @@
 import { Box, Container, Stack, TextField, Typography } from '@mui/material';
-
 import { deleteOrder, getOrder, getOrders, updateOrder, createOrder } from '../api/order';
-//TODO: implement these functions in order.js
-
 import Button from '../components/Button';
 import { useEffect, useState } from 'react';
 import to from 'await-to-js';
